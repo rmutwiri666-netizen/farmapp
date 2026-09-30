@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div class="brand">
+                <div class="brand-mark">🌾</div>
+                <span>Smart Farm Manager</span>
+            </div>
+            <div class="headline-note">Modern farm operations • Fresh harvest • Smart decisions</div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container navbar">
+            <div class="brand">
+                <div class="brand-mark">🚜</div>
+                <span>Smart Farm Manager</span>
+            </div>
+            <nav class="site-nav">
+                <a href="#products">Products</a>
+                <a href="#finance">Finance</a>
+                <a href="#users">Users</a>
+                <a href="admin.html">Admin</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#purchase" class="nav-btn">Purchase</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="kicker">Smart agriculture solutions</div>
+                    <h1>Grow smarter with <span>Smart Farm Manager</span></h1>
+                    <p>
+                        Manage your farm with confidence using a digital system for livestock, cereals,
+                        flowers, vegetables, and fresh ocra. Track produce, expenses, profit, and loss in one place.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="primary-btn" href="#purchase">Purchase</a>
+                        <a class="secondary-btn" href="admin.html">Admin Login</a>
+                    </div>
+                </div>
+
+                <div class="hero-panel">
+                    <div class="farm-card">
+                        <div class="farm-card-top">
+                            <div>
+                                <strong>Farm Overview</strong>
+                            </div>
+                            <div class="farm-icon">📊</div>
+                        </div>
+
+                        <div class="farm-metric">
+                            <div class="metric-box">
+                                <span class="metric-label">Produce</span>
+                                <span class="metric-value">2,480kg</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Expenses</span>
+                                <span class="metric-value">Ksh 850k</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Profit</span>
+                                <span class="metric-value">Ksh 1.2m</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Loss</span>
+                                <span class="metric-value">Ksh 120k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="label">Livestock</span>
+                    <span class="value">320</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Cereals</span>
+                    <span class="value">1,150</span>
+                </div>
+                <div class="stat-card profit">
+                    <span class="label">Profit</span>
+                    <span class="value">Ksh 1.2m</span>
+                </div>
+                <div class="stat-card loss">
+                    <span class="label">Loss</span>
+                    <span class="value">Ksh 120k</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-heading">
+                <h2>Farm Representation</h2>
+                <p>Live overview of the smart farm landscape.</p>
+            </div>
+            <div id="farm-scene" class="farm-scene"></div>
+        </section>
+
+        <section id="products" class="container">
+            <div class="section-heading">
+                <h2>Farm Products</h2>
+                <p>Healthy yields across all major farm categories.</p>
+            </div>
+
+            <div id="product-grid" class="product-grid"></div>
+        </section>
+
+        <section id="users" class="container">
+            <div class="section-heading">
+                <h2>Users</h2>
+                <p>Farm buyers, suppliers, and partners connected to the smart farm system.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="label">Active Buyers</span>
+                    <span class="value">245</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Suppliers</span>
+                    <span class="value">86</span>
+                </div>
+                <div class="stat-card profit">
+                    <span class="label">New Users</span>
+                    <span class="value">42</span>
+                </div>
+                <div class="stat-card loss">
+                    <span class="label">Pending</span>
+                    <span class="value">18</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="finance" class="container">
+            <div class="section-heading">
+                <h2>Produce, Expense, Profit & Loss</h2>
+                <p>Clear financial visibility for better decisions.</p>
+            </div>
+
+            <div class="finance-grid">
+                <div class="table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Produce</th>
+                                <th>Expense</th>
+                                <th>Profit</th>
+                                <th>Loss</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="finance-table-body">
+                            <tr>
+                                <td>Livestock</td>
+                                <td>Ksh 950k</td>
+                                <td>Ksh 400k</td>
+                                <td>Ksh 500k</td>
+                                <td>Ksh 30k</td>
+                                <td><span class="status good">Healthy</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cereals</td>
+                                <td>Ksh 1.3m</td>
+                                <td>Ksh 260k</td>
+                                <td>Ksh 1.0m</td>
+                                <td>Ksh 20k</td>
+                                <td><span class="status good">Strong</span></td>
+                            </tr>
+                            <tr>
+                                <td>Flowers</td>
+                                <td>Ksh 420k</td>
+                                <td>Ksh 90k</td>
+                                <td>Ksh 300k</td>
+                                <td>Ksh 15k</td>
+                                <td><span class="status warn">Stable</span></td>
+                            </tr>
+                            <tr>
+                                <td>Vegetables</td>
+                                <td>Ksh 680k</td>
+                                <td>Ksh 150k</td>
+                                <td>Ksh 500k</td>
+                                <td>Ksh 25k</td>
+                                <td><span class="status good">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td>Ocra</td>
+                                <td>Ksh 520k</td>
+                                <td>Ksh 120k</td>
+                                <td>Ksh 380k</td>
+                                <td>Ksh 30k</td>
+                                <td><span class="status good">Positive</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <aside class="admin-card">
+                    <h3>Admin Access</h3>
+                    <p>Open the standalone admin platform to manage products, prices, records, and finance.</p>
+                    <a href="admin.html" class="primary-btn admin-link-btn">Open Admin Platform</a>
+                    <div class="admin-contact-links admin-contact-box">
+                        <a href="mailto:rmutwiri25@gmail.com?subject=Smart%20Farm%20Manager%20Support">rmutwiri25@gmail.com</a>
+                        <a href="tel:+254706554354">Help line: 0706554354</a>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="database-panel">
+                <h3>Farm Database</h3>
+                <form id="record-form" class="record-form">
+                    <input type="text" name="category" placeholder="Farm category" required>
+                    <input type="number" name="produce" placeholder="Produce amount" required>
+                    <input type="number" name="expense" placeholder="Expense amount" required>
+                    <input type="number" name="profit" placeholder="Profit amount" required>
+                    <input type="number" name="loss" placeholder="Loss amount" required>
+                    <select name="status">
+                        <option value="Healthy">Healthy</option>
+                        <option value="Strong">Strong</option>
+                        <option value="Stable">Stable</option>
+                        <option value="Good">Good</option>
+                        <option value="Positive">Positive</option>
+                    </select>
+                    <button type="submit">Save Record</button>
+                </form>
+                <p id="record-status" class="record-status"></p>
+            </div>
+
+            <div id="purchase" class="purchase-card">
+                <div class="purchase-inner">
+                    <div>
+                        <h3>Ready to purchase farming support?</h3>
+                        <p>Get farm management tools, sales guidance, and agribusiness planning for your smart farm.</p>
+                    </div>
+                    <a href="https://wa.me/234706554354" class="purchase-btn" target="_blank" rel="noreferrer">Purchase Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contacts container">
+            <div class="section-heading">
+                <h2>Help & Contact</h2>
+                <p>Reach the farm manager and support team easily.</p>
+            </div>
+
+            <div class="contact-box">
+                <div class="contact-item">
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/234706554354" target="_blank" rel="noreferrer">+234 706 554 354</a>
+                </div>
+                <div class="contact-item">
+                    <h4>Helpline</h4>
+                    <a href="tel:+254706554354">0706554354</a>
+                </div>
+                <div class="contact-item">
+                    <h4>Admin Email</h4>
+                    <a href="mailto:rmutwiri25@gmail.com?subject=Smart%20Farm%20Manager%20Support">rmutwiri25@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>© 2026 Smart Farm Manager</div>
+            <div>Smart solutions for a greener future</div>
+        </div>
+    </footer>
+
+    <div class="mobile-contact-bar" aria-label="Quick contact links">
+        <a class="mobile-contact-link" href="tel:+254706554354">0706554354</a>
+        <a class="mobile-contact-link" href="mailto:rmutwiri25@gmail.com?subject=Smart%20Farm%20Manager%20Support">rmutwiri25@gmail.com</a>
+        <a class="mobile-contact-link" href="https://wa.me/234706554354" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

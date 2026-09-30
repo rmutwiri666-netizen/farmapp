@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm Manager | Admin Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div class="brand">
+                <div class="brand-mark">🌾</div>
+                <span>Smart Farm Manager</span>
+            </div>
+            <div class="headline-note">Admin platform • Farm operations control</div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container navbar">
+            <div class="brand">
+                <div class="brand-mark">🚜</div>
+                <span>Smart Farm Manager</span>
+            </div>
+            <nav class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="admin.html">Admin</a>
+                <a href="#contact">Support</a>
+            </nav>
+            <a href="index.html" class="nav-btn">User Platform</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="admin" class="container admin-platform-intro">
+            <div class="section-heading">
+                <h2>Admin Platform</h2>
+                <p>Secure control center for farm products, finance, and records.</p>
+            </div>
+
+            <aside class="admin-card admin-login-box">
+                <h3>Admin Login</h3>
+                <form id="admin-login-form" class="admin-login">
+                    <input id="admin-username" type="text" placeholder="Admin username" required>
+                    <input id="admin-password" type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p id="login-status" class="login-status"></p>
+                </form>
+
+                <div class="admin-contact-links">
+                    <a href="mailto:rmutwiri25@gmail.com?subject=Smart%20Farm%20Manager%20Support">rmutwiri25@gmail.com</a>
+                    <a href="tel:+254706554354">Help line: 0706554354</a>
+                </div>
+            </aside>
+        </section>
+
+        <section id="admin-dashboard" class="admin-dashboard hidden">
+            <div class="admin-shell container">
+                <aside class="admin-sidebar">
+                    <div class="admin-brand">
+                        <div class="brand-mark">🌾</div>
+                        <div>
+                            <strong>Admin Panel</strong>
+                            <span>Smart Farm</span>
+                        </div>
+                    </div>
+
+                    <nav class="admin-nav" aria-label="Admin sections">
+                        <button class="admin-nav-item active" type="button" data-panel="overview">Overview</button>
+                        <button class="admin-nav-item" type="button" data-panel="users">Users</button>
+                        <button class="admin-nav-item" type="button" data-panel="products">Products</button>
+                        <button class="admin-nav-item" type="button" data-panel="finance">Finance</button>
+                        <button class="admin-nav-item" type="button" data-panel="records">Records</button>
+                        <button class="admin-nav-item" type="button" data-panel="reports">Reports</button>
+                    </nav>
+
+                    <div class="admin-info-box">
+                        <span>System status</span>
+                        <strong>Online</strong>
+                    </div>
+                </aside>
+
+                <div class="admin-main">
+                    <header class="admin-topbar">
+                        <div>
+                            <p class="eyebrow">Operations center</p>
+                            <h2>Admin Dashboard</h2>
+                        </div>
+                        <button id="logout-admin" class="logout-btn" type="button">Logout</button>
+                    </header>
+
+                    <div class="panel active" data-panel-content="overview">
+                        <div id="admin-overview-cards" class="kpi-grid"></div>
+                        <div class="admin-content-grid">
+                            <div class="admin-card-panel">
+                                <h3>Recent activity</h3>
+                                <ul id="admin-activity-list" class="activity-list"></ul>
+                            </div>
+                            <div class="admin-card-panel">
+                                <h3>Quick links</h3>
+                                <ul class="quick-links">
+                                    <li>Farm performance</li>
+                                    <li>Expense management</li>
+                                    <li>Sales tracking</li>
+                                    <li>Inventory overview</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="admin-edit-bar">
+                            <div class="edit-bar-header">
+                                <h3>Admin Editable Bar</h3>
+                                <span>Quick updates</span>
+                            </div>
+                            <div class="edit-bar-form">
+                                <select id="edit-record-select" aria-label="Choose farm record"></select>
+                                <input id="edit-category" type="text" placeholder="Category">
+                                <input id="edit-produce" type="number" placeholder="Produce amount">
+                                <input id="edit-expense" type="number" placeholder="Expense amount">
+                                <input id="edit-profit" type="number" placeholder="Profit amount">
+                                <input id="edit-loss" type="number" placeholder="Loss amount">
+                                <select id="edit-status">
+                                    <option value="Healthy">Healthy</option>
+                                    <option value="Strong">Strong</option>
+                                    <option value="Stable">Stable</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Positive">Positive</option>
+                                </select>
+                                <button id="save-edit-record" type="button">Save Edit</button>
+                                <button id="add-new-record" class="secondary-edit-btn" type="button">Add New</button>
+                                <button id="delete-selected-record" class="danger-edit-btn" type="button">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel" data-panel-content="users">
+                        <div class="admin-card-panel">
+                            <h3>Users</h3>
+                            <div id="admin-users-list" class="stack-list"></div>
+                        </div>
+                    </div>
+
+                    <div class="panel" data-panel-content="products">
+                        <div class="admin-card-panel product-editor-panel">
+                            <h3>Farm products</h3>
+                            <div id="admin-products-list" class="stack-list"></div>
+
+                            <div class="product-editor-form">
+                                <select id="product-select" aria-label="Choose product"></select>
+                                <input id="product-name" type="text" placeholder="Product name">
+                                <input id="product-icon" type="text" placeholder="Emoji icon">
+                                <input id="product-price" type="number" placeholder="Price">
+                                <textarea id="product-description" rows="3" placeholder="Product description"></textarea>
+                                <div class="product-editor-actions">
+                                    <button id="save-product-edit" type="button">Save Product</button>
+                                    <button id="add-product" type="button" class="secondary-edit-btn">Add Product</button>
+                                    <button id="delete-product" type="button" class="danger-edit-btn">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel" data-panel-content="finance">
+                        <div class="admin-card-panel">
+                            <h3>Finance overview</h3>
+                            <div id="admin-finance-summary" class="summary-boxes"></div>
+                        </div>
+                    </div>
+
+                    <div class="panel" data-panel-content="records">
+                        <div class="admin-card-panel">
+                            <h3>Farm records</h3>
+                            <div id="admin-record-table" class="mini-table"></div>
+                        </div>
+                    </div>
+
+                    <div class="panel" data-panel-content="reports">
+                        <div class="admin-card-panel">
+                            <h3>Reports</h3>
+                            <div id="admin-reports-list" class="stack-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contacts container">
+            <div class="section-heading">
+                <h2>Admin Support</h2>
+                <p>Contact the farm manager for technical or operational assistance.</p>
+            </div>
+
+            <div class="contact-box">
+                <div class="contact-item">
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/234706554354" target="_blank" rel="noreferrer">+234 706 554 354</a>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <a href="mailto:rmutwiri25@gmail.com?subject=Smart%20Farm%20Manager%20Support">rmutwiri25@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h4>Helpline</h4>
+                    <a href="tel:+254706554354">0706554354</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>© 2026 Smart Farm Manager</div>
+            <div>Smart solutions for a greener future</div>
+        </div>
+    </footer>
+
+    <div class="mobile-contact-bar" aria-label="Quick contact links">
+        <a class="mobile-contact-link" href="tel:+254706554354">0706554354</a>
+        <a class="mobile-contact-link" href="mailto:rmutwiri25@gmail.com?subject=Smart%20Farm%20Manager%20Support">rmutwiri25@gmail.com</a>
+        <a class="mobile-contact-link" href="https://wa.me/234706554354" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
